@@ -12,6 +12,51 @@ export const PlaylistModal = ({ renderedVideo }) => {
     setToastShow
   } = useToggleContext();
 
+  const addToPlaylistFn = () => {
+    return (
+      <>
+        <div className="flex-column align-center ">
+          <input
+            className="input-box"
+            placeholder="Name"
+            onChange={(event) => setNameOfPlaylist(event.target.value)}
+          />
+          <button
+            className="button button-primary"
+            style={{ width: "5rem" }}
+            onClick={() => {
+              dispatch({
+                type: "CREATE_PLAYLIST",
+                nameOfPlaylist: nameOfPlaylist,
+                payload: renderedVideo
+              });
+            }}
+          >
+            <span>Create </span>
+          </button>
+        </div>
+        )
+      </>
+    );
+  };
+
+  const createNewPlaylistFn = () => {
+    return (
+      <>
+        <div className="flex-column align-center">
+          <button
+            style={{ width: "11rem", margin: "1rem" }}
+            className="button button-primary"
+            onClick={() => setCreatePlaylist((toggle) => !toggle)}
+          >
+            Create New Playlist{" "}
+          </button>
+        </div>
+        )
+      </>
+    );
+  };
+
   return (
     <>
       <div
@@ -49,51 +94,19 @@ export const PlaylistModal = ({ renderedVideo }) => {
                       setToastText("Added to Playlist");
                     }}
                   >
-                    {" "}
-                    ADD{" "}
+                    ADD
                   </button>
                   <h3> {video.name} </h3>
                 </div>
               );
-            })}{" "}
+            })}
           </div>
 
-          {createPlaylist && (
-            <div className="flex-column align-center ">
-              <input
-                className="input-box"
-                placeholder="Name"
-                onChange={(event) => setNameOfPlaylist(event.target.value)}
-              />
-              <button
-                className="button button-primary"
-                style={{ width: "5rem" }}
-                onClick={() => {
-                  dispatch({
-                    type: "CREATE_PLAYLIST",
-                    nameOfPlaylist: nameOfPlaylist,
-                    payload: renderedVideo
-                  });
-                }}
-              >
-                <span>Create </span>
-              </button>
-            </div>
-          )}
+          {createPlaylist && addToPlaylistFn()}
 
-          {!createPlaylist && (
-            <div className="flex-column align-center">
-              <button
-                style={{ width: "11rem", margin: "1rem" }}
-                className="button button-primary"
-                onClick={() => setCreatePlaylist((toggle) => !toggle)}
-              >
-                Create New Playlist{" "}
-              </button>
-            </div>
-          )}
+          {!createPlaylist && createNewPlaylistFn()}
         </div>
-      </div>{" "}
+      </div>
     </>
   );
 };
