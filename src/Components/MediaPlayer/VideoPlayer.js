@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { watchById } from "../../Functions";
 import { FooterButtons } from "./FooterButtons";
-import { DateToString, ViewsToString } from "../../Functions";
+import { dateToString, viewsToString } from "../../Functions";
 import { AiOutlineDown, AiOutlineUp } from "react-icons/ai";
 
 export const VideoPlayer = ({ renderedVideo }) => {
   const [showDescription, setShowDescription] = useState(false);
-  
+
   return (
     <>
       <div className="video-player">
@@ -28,8 +28,8 @@ export const VideoPlayer = ({ renderedVideo }) => {
 
             <div>
               <p className="color-grey">
-                {ViewsToString(renderedVideo.views)} views •{" "}
-                {DateToString(renderedVideo.date)}{" "}
+                {viewsToString(renderedVideo.views)} views •{" "}
+                {dateToString(renderedVideo.date)}{" "}
               </p>
             </div>
 

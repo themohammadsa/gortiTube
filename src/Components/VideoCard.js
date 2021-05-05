@@ -1,4 +1,4 @@
-import { DateToString, ViewsToString, TitleShortner } from "../Functions";
+import { dateToString, viewsToString, titleShortner } from "../Functions";
 import { useNavigate } from "react-router-dom";
 
 export const VideoCard = ({ video }) => {
@@ -12,7 +12,7 @@ export const VideoCard = ({ video }) => {
       <img src={video.thumbnail} className="thumbnail" />
 
       <div className="align-left">
-        <h2 style={{}}> {TitleShortner(video.title)} </h2>{" "}
+        <h2 style={{}}> {titleShortner(video.title)} </h2>{" "}
       </div>
       <div className="flex-row">
         <div>
@@ -23,7 +23,7 @@ export const VideoCard = ({ video }) => {
           <span style={{ paddingBottom: "0.2rem" }}> {video.author} </span>
 
           <span>
-            {ViewsToString(video.views)} views • {DateToString(video.date)}{" "}
+            {viewsToString(video.views)} views • {dateToString(video.date)}{" "}
           </span>
         </div>
       </div>

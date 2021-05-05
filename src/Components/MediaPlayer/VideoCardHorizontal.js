@@ -1,7 +1,6 @@
-import { DateToString, ViewsToString, TitleShortner } from "../../Functions";
+import { dateToString, viewsToString } from "../../Functions";
 import { useNavigate } from "react-router-dom";
 import { FooterButtons } from "./FooterButtons";
-import { useToggleContext } from "../../Context/ToggleContext";
 
 export const VideoCardHorizontal = ({ video }) => {
   const navigate = useNavigate();
@@ -29,7 +28,7 @@ export const VideoCardHorizontal = ({ video }) => {
               {video.author}{" "}
             </span>
             <span className="color-grey">
-              {ViewsToString(video.views)} views • {DateToString(video.date)}{" "}
+              {viewsToString(video.views)} views • {dateToString(video.date)}{" "}
             </span>
           </div>
           <div className="video-card-horizontal-size">
