@@ -6,6 +6,7 @@ import { VideoPlayer } from "../Components/MediaPlayer/VideoPlayer";
 import { VideoCardHorizontal } from "../Components/MediaPlayer/VideoCardHorizontal";
 import { NavBar } from "../Components/NavBar";
 import { Footer } from "../Components/Footer";
+import { Toast } from "../Components/Toast";
 
 export const MediaPlayer = () => {
   const [renderedVideo, setRenderedVideo] = useState([]);
@@ -54,6 +55,7 @@ export const MediaPlayer = () => {
           </div>
         </div>{" "}
       </div>{" "}
+      <Toast />
       <Footer />
     </>
   );

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { render } from "react-dom";
 import { useLibraryContext } from "../../Context/LibraryContext";
 import { useToggleContext } from "../../Context/ToggleContext";
 
@@ -7,15 +6,19 @@ export const PlaylistModal = ({ renderedVideo }) => {
   const [nameOfPlaylist, setNameOfPlaylist] = useState("");
   const { state, dispatch } = useLibraryContext();
   const [createPlaylist, setCreatePlaylist] = useState(false);
-  const { setDisplayPlaylist } = useToggleContext();
-  console.log("modal is ....", renderedVideo.title);
+  const {
+    setDisplayPlaylistFn,
+    setToastText,
+    setToastShow
+  } = useToggleContext();
+
   return (
     <>
       <div
         className="modal-block"
         onClick={() =>
           event.target.classList.contains("modal-block") &&
-          setDisplayPlaylist()
+          setDisplayPlaylistFn()
         }
       >
         <div className="modal-content">
@@ -23,7 +26,7 @@ export const PlaylistModal = ({ renderedVideo }) => {
             <h2>Save to Playlist </h2>
             <span
               className="button-dismiss"
-              onClick={() => setDisplayPlaylist()}
+              onClick={() => setDisplayPlaylistFn()}
             >
               ×
             </span>
@@ -41,7 +44,9 @@ export const PlaylistModal = ({ renderedVideo }) => {
                         nameOfPlaylist: video.name,
                         payload: renderedVideo
                       });
-                      setDisplayPlaylist();
+                      setDisplayPlaylistFn();
+                      setToastShow((toggle) => !toggle);
+                      setToastText("Added to Playlist");
                     }}
                   >
                     {" "}

@@ -4,7 +4,8 @@ const ToggleContext = createContext();
 
 export const ToggleProvider = ({ children }) => {
   const [displayPlaylist, setDisplayPlaylist] = useState(false);
-
+  const [toastText, setToastText] = useState("");
+  const [toastShow, setToastShow] = useState(false);
   const [currentVideo, setCurrentVideo] = useState({});
 
   const setDisplayPlaylistFn = () => setDisplayPlaylist((block) => !block);
@@ -15,7 +16,10 @@ export const ToggleProvider = ({ children }) => {
         displayPlaylist,
         setDisplayPlaylist,
         setDisplayPlaylistFn,
-
+        toastText,
+        setToastText,
+        toastShow,
+        setToastShow,
         currentVideo,
         setCurrentVideo
       }}

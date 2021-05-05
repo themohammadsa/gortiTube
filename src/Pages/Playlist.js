@@ -3,10 +3,13 @@ import { VideoCard } from "../Components/VideoCard";
 import { NavBar } from "../Components/NavBar";
 import { useState } from "react";
 import { Footer } from "../Components/Footer";
+import { Toast } from "../Components/Toast";
+import { useToggleContext } from "../Context/ToggleContext";
 
 export const Playlist = () => {
   const { state, dispatch } = useLibraryContext();
   const [reRender, setReRender] = useState(false);
+  const { setToastText, setToastShow } = useToggleContext();
 
   return (
     <>
@@ -29,11 +32,13 @@ export const Playlist = () => {
                       <span
                         className="button-delete"
                         onClick={() => {
-                          setReRender(!reRender);
                           dispatch({
                             type: "DELETE_PLAYLIST",
                             nameOfPlaylist: playlist.name
                           });
+                          setReRender(!reRender);
+                          setToastShow((toggle) => !toggle);
+                          setToastText("Deleted the Playlist");
                         }}
                       >
                         DELETE
@@ -52,12 +57,14 @@ export const Playlist = () => {
                               <span
                                 className="button-close"
                                 onClick={() => {
-                                  setReRender(!reRender);
                                   dispatch({
                                     type: "REMOVE_FROM_PLAYLIST",
                                     nameOfPlaylist: playlist.name,
                                     payload: video
                                   });
+                                  setReRender(!reRender);
+                                  setToastShow((toggle) => !toggle);
+                                  setToastText("Removed from Playlist");
                                 }}
                               >
                                 {" "}
@@ -76,6 +83,7 @@ export const Playlist = () => {
           )}
         </div>
       </div>{" "}
+      <Toast />
       <Footer />{" "}
     </>
   );

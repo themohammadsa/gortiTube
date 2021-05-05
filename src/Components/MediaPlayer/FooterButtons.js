@@ -9,7 +9,6 @@ import {
   AiOutlineHeart
 } from "react-icons/ai";
 import { PlaylistModal } from "./PlaylistModal";
-import { useState } from "react";
 
 export const FooterButtons = ({ renderedVideo }) => {
   const { state, dispatch } = useLibraryContext();
@@ -71,12 +70,12 @@ export const FooterButtons = ({ renderedVideo }) => {
         )}
         <IoIosSend
           className="react-icon"
-          onClick={() =>
+          onClick={() => {
             dispatch({
               type: "ADD_TO_LIKED_VIDEOS",
               payload: renderedVideo
-            })
-          }
+            });
+          }}
         />
         <MdPlaylistAdd
           className="react-icon"

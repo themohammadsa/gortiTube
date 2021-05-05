@@ -2,9 +2,12 @@ import { useLibraryContext } from "../Context/LibraryContext";
 import { VideoCard } from "../Components/VideoCard";
 import { NavBar } from "../Components/NavBar";
 import { Footer } from "../Components/Footer";
+import { useToggleContext } from "../Context/ToggleContext";
+import { Toast } from "../Components/Toast";
 
 export const WatchLater = () => {
   const { state, dispatch } = useLibraryContext();
+  const { setToastText, setToastShow } = useToggleContext();
 
   return (
     <>
@@ -26,12 +29,14 @@ export const WatchLater = () => {
                       <VideoCard video={video} />
                       <span
                         className="button-close"
-                        onClick={() =>
+                        onClick={() => {
                           dispatch({
                             type: "REMOVE_FROM_WATCH_LATER",
                             payload: video
-                          })
-                        }
+                          });
+                          setToastShow((toggle) => !toggle);
+                          setToastText("Removed from Watch Later");
+                        }}
                       >
                         {" "}
                         ×{" "}
@@ -44,6 +49,7 @@ export const WatchLater = () => {
           )}{" "}
         </div>
       </div>{" "}
+      <Toast />
       <Footer />{" "}
     </>
   );

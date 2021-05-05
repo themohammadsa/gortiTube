@@ -180,6 +180,45 @@ body {
   letter-spacing: 0.6px;
 }
 
+.toast-content {
+  max-width: 16rem;
+  height: 1rem;
+  position: fixed;
+  bottom: 5rem;
+  left: 0rem;
+  right: 0rem;
+  margin: 0 auto;
+
+  z-index: 100;
+  display: block;
+
+  padding: 1rem;
+  background-color: var(--borderblue);
+  color: white;
+  font-weight: 500;
+  border-radius: 5px;
+  opacity: 0.9;
+}
+
+.toast-dismiss {
+  position: absolute;
+  right: 7px;
+  top: -1px;
+  font-weight: 800;
+  font-size: 1.3rem;
+}
+
+.button-dismiss {
+  font-size: 35px;
+  color: var(--borderblue);
+  position: relative;
+  top: -5px;
+  right: -1rem;
+  padding: 0px 10px 0px 0px;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
 .playlist-map > button {
   margin-right: 1.5rem;
 }
@@ -455,7 +494,6 @@ hr {
   margin: 4rem 0rem;
 }
 
-
 @media only screen and (min-width: 600px) {
   .video-card-horizontal .thumbnail {
     height: 7rem;
@@ -537,6 +575,10 @@ hr {
 
   .video-card-content {
     height: 8rem;
+  }
+
+  .toast-content {
+    top: calc(100vh - 15rem);
   }
 }
 

@@ -6,7 +6,7 @@ import { AiOutlineDown, AiOutlineUp } from "react-icons/ai";
 
 export const VideoPlayer = ({ renderedVideo }) => {
   const [showDescription, setShowDescription] = useState(false);
-
+  
   return (
     <>
       <div className="video-player">
