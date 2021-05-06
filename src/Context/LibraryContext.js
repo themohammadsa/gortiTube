@@ -12,6 +12,7 @@ const LibraryContext = createContext();
 
 export const LibraryProvider = ({ children }) => {
   const [database, setDatabase] = useState([]);
+  const [loader, setLoader] = useState(false);
 
   const initialState = {
     likedVideos: [],
@@ -27,6 +28,7 @@ export const LibraryProvider = ({ children }) => {
     const {
       data: { videos }
     } = await getRequest("/videolibrary");
+    setLoader(true);
     setDatabase(videos);
   }, []);
 
@@ -34,7 +36,7 @@ export const LibraryProvider = ({ children }) => {
 
   return (
     <>
-      <LibraryContext.Provider value={{ database, state, dispatch }}>
+      <LibraryContext.Provider value={{ database, state, dispatch, loader, setLoader }}>
         {children}
       </LibraryContext.Provider>
     </>

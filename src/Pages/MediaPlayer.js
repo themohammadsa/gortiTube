@@ -7,11 +7,12 @@ import { VideoCardHorizontal } from "../Components/MediaPlayer/VideoCardHorizont
 import { NavBar } from "../Components/NavBar";
 import { Footer } from "../Components/Footer";
 import { Toast } from "../Components/Toast";
+import { Loader } from "../Components/Loader/Loader";
 
 export const MediaPlayer = () => {
   const [renderedVideo, setRenderedVideo] = useState([]);
 
-  const { database, dispatch } = useLibraryContext();
+  const { database, dispatch, loader, setLoader } = useLibraryContext();
 
   const { id } = useParams();
 
@@ -19,8 +20,9 @@ export const MediaPlayer = () => {
     let {
       data: { video }
     } = await getRequest(`/watch/${id}`);
-    setRenderedVideo(video[0]);
 
+    setRenderedVideo(video[0]);
+    setLoader(true);
     dispatch({
       type: "ADD_TO_HISTORY",
       payload: video[0]
@@ -37,23 +39,29 @@ export const MediaPlayer = () => {
           {" "}
           <NavBar />{" "}
         </div>
-        <div className="flex-column">
-          <div>
-            <VideoPlayer renderedVideo={renderedVideo} />{" "}
+        {!loader ? (
+          <div className="loader">
+            <Loader />{" "}
           </div>
+        ) : (
+          <div className="flex-column">
+            <div>
+              <VideoPlayer renderedVideo={renderedVideo} />
+            </div>
 
-          <div className="flex-column flex-wrap ">
-            {database.map((video, index) => {
-              return (
-                <div key={index}>
-                  {video.id !== renderedVideo.id && (
-                    <VideoCardHorizontal video={video} />
-                  )}
-                </div>
-              );
-            })}{" "}
+            <div className="flex-column flex-wrap ">
+              {database.map((video, index) => {
+                return (
+                  <div key={index}>
+                    {video.id !== renderedVideo.id && (
+                      <VideoCardHorizontal video={video} />
+                    )}
+                  </div>
+                );
+              })}{" "}
+            </div>
           </div>
-        </div>{" "}
+        )}{" "}
       </div>{" "}
       <Toast />
       <Footer />
