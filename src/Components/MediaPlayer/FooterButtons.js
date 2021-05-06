@@ -68,15 +68,7 @@ export const FooterButtons = ({ renderedVideo }) => {
             }
           />
         )}
-        <IoIosSend
-          className="react-icon"
-          onClick={() => {
-            dispatch({
-              type: "ADD_TO_LIKED_VIDEOS",
-              payload: renderedVideo
-            });
-          }}
-        />
+        <IoIosSend className="react-icon" />
         <MdPlaylistAdd
           className="react-icon"
           onClick={() => {
