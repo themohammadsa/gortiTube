@@ -1,9 +1,9 @@
-import { useLibraryContext } from '../context/LibraryContext';
-import { VideoCard } from '../components/VideoCard';
-import { NavBar } from '../components/NavBar';
-import { Footer } from '../components/Footer';
-import { useToggleContext } from '../context/ToggleContext';
-import { Toast } from '../components/Toast';
+import { useLibraryContext } from '../../../context/LibraryContext';
+import { VideoCard } from '../../../components/VideoCard';
+import { NavBar } from '../../../components/navBar/NavBar';
+import { Footer } from '../../../components/footer/Footer';
+import { useToggleContext } from '../../../context/ToggleContext';
+import { Toast } from '../../../components/Toast';
 
 export const History = () => {
   const { state, dispatch } = useLibraryContext();

@@ -1,10 +1,10 @@
-import { useLibraryContext } from '../context/LibraryContext';
-import { VideoCard } from '../components/VideoCard';
-import { NavBar } from '../components/NavBar';
+import { useLibraryContext } from '../../context/LibraryContext';
+import { VideoCard } from '../../components/VideoCard';
+import { NavBar } from '../../components/navBar/NavBar';
 import { useState } from 'react';
-import { Footer } from '../components/Footer';
-import { Toast } from '../components/Toast';
-import { useToggleContext } from '../context/ToggleContext';
+import { Footer } from '../../components/footer/Footer';
+import { Toast } from '../../components/Toast';
+import { useToggleContext } from '../../context/ToggleContext';
 
 export const Playlist = () => {
   const { state, dispatch } = useLibraryContext();
@@ -34,7 +34,7 @@ export const Playlist = () => {
                         onClick={() => {
                           dispatch({
                             type: 'DELETE_PLAYLIST',
-                            nameOfPlaylist: playlist.name,
+                            nameOfPlaylist: playlist.name
                           });
                           setReRender(!reRender);
                           setToastShow((toggle) => !toggle);

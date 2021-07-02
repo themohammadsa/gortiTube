@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaSearch } from 'react-icons/fa';
-import logotext from '../icons/logotext.png';
-import logo from '../icons/logo.png';
-import { SearchBar } from './SearchBar';
+import logotext from '../../icons/logotext.png';
+import logo from '../../icons/logo.png';
+import { SearchBar } from '../searchBar/SearchBar';
 import { BiLogInCircle } from 'react-icons/bi';
-import { useAuthContext } from '../context/AuthContext';
-import { setupTokenHeaderForAxios } from '../services/setupTokenHeaderForAxios';
+import { useAuthContext } from '../../Context/AuthContext';
+import { setupTokenHeaderForAxios } from '../../services/setupTokenHeaderForAxios';
 
 export const Header = () => {
   const navigate = useNavigate();
