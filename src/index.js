@@ -1,23 +1,26 @@
-import { StrictMode } from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter as Router } from "react-router-dom";
-import { LibraryProvider } from "./Context/LibraryContext";
-import App from "./App";
-import { ToggleProvider } from "./Context/ToggleContext";
-import { ScrollProvider } from "./Context/ScrollContext";
+import { StrictMode } from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { LibraryProvider } from './context/LibraryContext';
+import App from './App';
+import { ToggleProvider } from './context/ToggleContext';
+import { ScrollProvider } from './context/ScrollContext';
+import { AuthProvider } from './context/AuthContext';
 
-const rootElement = document.getElementById("root");
+const rootElement = document.getElementById('root');
 ReactDOM.render(
   <StrictMode>
-    <Router>
-      <ScrollProvider>
-        <LibraryProvider>
-          <ToggleProvider>
-            <App />
-          </ToggleProvider>
-        </LibraryProvider>
-      </ScrollProvider>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <ScrollProvider>
+          <LibraryProvider>
+            <ToggleProvider>
+              <App />
+            </ToggleProvider>
+          </LibraryProvider>
+        </ScrollProvider>
+      </Router>
+    </AuthProvider>
   </StrictMode>,
   rootElement
 );

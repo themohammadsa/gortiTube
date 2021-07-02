@@ -1,4 +1,4 @@
-import { dateToString, viewsToString, titleShortner } from "../Functions";
+import { dateToString, viewsToString, titleShortner } from "../utils/Functions";
 import { useNavigate } from "react-router-dom";
 
 export const VideoCard = ({ video }) => {

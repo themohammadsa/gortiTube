@@ -1,13 +1,13 @@
-import { getRequest } from "../API/useAxios";
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { useLibraryContext } from "../Context/LibraryContext";
-import { VideoPlayer } from "../Components/MediaPlayer/VideoPlayer";
-import { VideoCardHorizontal } from "../Components/MediaPlayer/VideoCardHorizontal";
-import { NavBar } from "../Components/NavBar";
-import { Footer } from "../Components/Footer";
-import { Toast } from "../Components/Toast";
-import { Loader } from "../Components/Loader/Loader";
+import { getVideo } from '../services/getVideo';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { useLibraryContext } from '../context/LibraryContext';
+import { VideoPlayer } from '../components/mediaPlayer/VideoPlayer';
+import { VideoCardHorizontal } from '../components/mediaPlayer/VideoCardHorizontal';
+import { NavBar } from '../components/NavBar';
+import { Footer } from '../components/Footer';
+import { Toast } from '../components/Toast';
+import { Loader } from '../components/loader/Loader';
 
 export const MediaPlayer = () => {
   const [renderedVideo, setRenderedVideo] = useState([]);
@@ -18,14 +18,14 @@ export const MediaPlayer = () => {
 
   useEffect(async () => {
     let {
-      data: { video }
-    } = await getRequest(`/watch/${id}`);
+      data: { video },
+    } = await getVideo(id);
 
     setRenderedVideo(video[0]);
     setLoader(true);
     dispatch({
-      type: "ADD_TO_HISTORY",
-      payload: video[0]
+      type: 'ADD_TO_HISTORY',
+      payload: video[0],
     });
   }, [id]);
 
@@ -33,15 +33,15 @@ export const MediaPlayer = () => {
     <>
       <div
         className="page justify-space-between"
-        style={{ paddingBottom: "15rem" }}
+        style={{ paddingBottom: '15rem' }}
       >
         <div>
-          {" "}
-          <NavBar />{" "}
+          {' '}
+          <NavBar />{' '}
         </div>
         {!loader ? (
           <div className="loader">
-            <Loader />{" "}
+            <Loader />{' '}
           </div>
         ) : (
           <div className="flex-column">
@@ -58,11 +58,11 @@ export const MediaPlayer = () => {
                     )}
                   </div>
                 );
-              })}{" "}
+              })}{' '}
             </div>
           </div>
-        )}{" "}
-      </div>{" "}
+        )}{' '}
+      </div>{' '}
       <Toast />
       <Footer />
     </>

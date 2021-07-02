@@ -1,10 +1,10 @@
-import { useLibraryContext } from "../Context/LibraryContext";
-import { VideoCard } from "../Components/VideoCard";
-import { NavBar } from "../Components/NavBar";
-import { useState } from "react";
-import { Footer } from "../Components/Footer";
-import { Toast } from "../Components/Toast";
-import { useToggleContext } from "../Context/ToggleContext";
+import { useLibraryContext } from '../context/LibraryContext';
+import { VideoCard } from '../components/VideoCard';
+import { NavBar } from '../components/NavBar';
+import { useState } from 'react';
+import { Footer } from '../components/Footer';
+import { Toast } from '../components/Toast';
+import { useToggleContext } from '../context/ToggleContext';
 
 export const Playlist = () => {
   const { state, dispatch } = useLibraryContext();
@@ -15,8 +15,8 @@ export const Playlist = () => {
     <>
       <div className="page">
         <div>
-          {" "}
-          <NavBar />{" "}
+          {' '}
+          <NavBar />{' '}
         </div>
         <div className="flex-column margin-auto">
           <h1 className="heading">Playlist</h1>
@@ -26,54 +26,54 @@ export const Playlist = () => {
               {state.playlist.map((playlist, index) => {
                 return (
                   <div key={index}>
-                    <h1 className="heading" style={{ position: "relative" }}>
-                      {" "}
-                      {playlist.name}{" "}
+                    <h1 className="heading" style={{ position: 'relative' }}>
+                      {' '}
+                      {playlist.name}{' '}
                       <span
                         className="button-delete"
                         onClick={() => {
                           dispatch({
-                            type: "DELETE_PLAYLIST",
+                            type: 'DELETE_PLAYLIST',
                             nameOfPlaylist: playlist.name
                           });
                           setReRender(!reRender);
                           setToastShow((toggle) => !toggle);
-                          setToastText("Deleted the Playlist");
+                          setToastText('Deleted the Playlist');
                         }}
                       >
                         DELETE
-                      </span>{" "}
+                      </span>{' '}
                     </h1>
                     <h3 className="sub-heading">
-                      {" "}
-                      {state.playlist[index].video.length} videos{" "}
-                    </h3>{" "}
+                      {' '}
+                      {state.playlist[index].video.length} videos{' '}
+                    </h3>{' '}
                     <div className="flex-row flex-wrap justify-space-evenly">
                       {playlist.video.map((video, index) => {
                         return (
                           <div key={index}>
-                            <div style={{ position: "relative" }}>
-                              <VideoCard video={video} />{" "}
+                            <div style={{ position: 'relative' }}>
+                              <VideoCard video={video} />{' '}
                               <span
                                 className="button-close"
                                 onClick={() => {
                                   dispatch({
-                                    type: "REMOVE_FROM_PLAYLIST",
+                                    type: 'REMOVE_FROM_PLAYLIST',
                                     nameOfPlaylist: playlist.name,
-                                    payload: video
+                                    payload: video,
                                   });
                                   setReRender(!reRender);
                                   setToastShow((toggle) => !toggle);
-                                  setToastText("Removed from Playlist");
+                                  setToastText('Removed from Playlist');
                                 }}
                               >
-                                {" "}
-                                ×{" "}
+                                {' '}
+                                ×{' '}
                               </span>
                             </div>
                           </div>
                         );
-                      })}{" "}
+                      })}{' '}
                     </div>
                     <hr />
                   </div>
@@ -82,9 +82,9 @@ export const Playlist = () => {
             </div>
           )}
         </div>
-      </div>{" "}
+      </div>{' '}
       <Toast />
-      <Footer />{" "}
+      <Footer />{' '}
     </>
   );
 };

@@ -1,9 +1,9 @@
-import { useLibraryContext } from "../Context/LibraryContext";
-import { VideoCard } from "../Components/VideoCard";
-import { NavBar } from "../Components/NavBar";
-import { Footer } from "../Components/Footer";
-import { Toast } from "../Components/Toast";
-import { useToggleContext } from "../Context/ToggleContext";
+import { useLibraryContext } from "../context/LibraryContext";
+import { VideoCard } from "../components/VideoCard";
+import { NavBar } from "../components/NavBar";
+import { Footer } from "../components/Footer";
+import { Toast } from "../components/Toast";
+import { useToggleContext } from "../context/ToggleContext";
 
 export const LikedVideos = () => {
   const { state, dispatch } = useLibraryContext();

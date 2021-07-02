@@ -1,9 +1,9 @@
-import { useLibraryContext } from "../Context/LibraryContext";
-import { VideoCard } from "../Components/VideoCard";
-import { NavBar } from "../Components/NavBar";
-import { Footer } from "../Components/Footer";
-import { useToggleContext } from "../Context/ToggleContext";
-import { Toast } from "../Components/Toast";
+import { useLibraryContext } from "../context/LibraryContext";
+import { VideoCard } from "../components/VideoCard";
+import { NavBar } from "../components/NavBar";
+import { Footer } from "../components/Footer";
+import { useToggleContext } from "../context/ToggleContext";
+import { Toast } from "../components/Toast";
 
 export const WatchLater = () => {
   const { state, dispatch } = useLibraryContext();

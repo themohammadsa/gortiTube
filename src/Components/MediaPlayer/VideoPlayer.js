@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { watchById } from "../../Functions";
+import { watchById } from "../../utils/Functions";
 import { FooterButtons } from "./FooterButtons";
-import { dateToString, viewsToString } from "../../Functions";
+import { dateToString, viewsToString } from "../../utils/Functions";
 import { AiOutlineDown, AiOutlineUp } from "react-icons/ai";
 
 export const VideoPlayer = ({ renderedVideo }) => {

@@ -1,5 +1,5 @@
-import { useLibraryContext } from "../../Context/LibraryContext";
-import { useToggleContext } from "../../Context/ToggleContext";
+import { useLibraryContext } from "../../context/LibraryContext";
+import { useToggleContext } from "../../context/ToggleContext";
 import { IoIosSend } from "react-icons/io";
 import { MdPlaylistAdd } from "react-icons/md";
 import {

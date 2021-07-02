@@ -1,7 +1,7 @@
 import "./styles.css";
-import { Header } from "./Components/Header";
-import { MobileNav } from "./Components/MobileNav";
-import { Router } from "./Components/Router";
+import { Header } from "./components/Header";
+import { MobileNav } from "./components/MobileNav";
+import { Router } from "./components/Router";
 
 export default function App() {
   return (

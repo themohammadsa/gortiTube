@@ -1,7 +1,7 @@
-import { useLibraryContext } from "../Context/LibraryContext";
-import { Footer } from "../Components/Footer";
-import { NavBar } from "../Components/NavBar";
-import { VideoCard } from "../Components/VideoCard";
+import { useLibraryContext } from "../context/LibraryContext";
+import { Footer } from "../components/Footer";
+import { NavBar } from "../components/NavBar";
+import { VideoCard } from "../components/VideoCard";
 import { useLocation } from "react-router-dom";
 
 export const Search = () => {

@@ -494,6 +494,13 @@ hr {
   margin: 4rem 0rem;
 }
 
+.icon-text {
+  color: var(--borderblue);
+  font-weight: 700;
+  margin: 0rem 0.5rem;
+  font-size: 0.8rem;
+}
+
 .loader {
   height: 70vh;
   display: flex;
@@ -501,6 +508,16 @@ hr {
   margin: 0 auto;
   justify-content: center;
   align-items: center;
+}
+
+.user-icon {
+  color: var(--borderblue);
+  font-size: 1.6rem;
+  position: relative;
+  top: 2px;
+  left: 3px;
+  margin-left: 0.8rem;
+  margin-right: 0.5rem;
 }
 
 @media only screen and (min-width: 600px) {
@@ -539,7 +556,7 @@ hr {
   }
 
   .page-content {
-    width: 95%;
+    width: 100%;
   }
 
   .logo {
@@ -588,6 +605,16 @@ hr {
 
   .toast-content {
     top: calc(100vh - 15rem);
+  }
+
+  .user-icon {
+    margin-left: 0.2rem;
+    top: 3px;
+    left: 3px;
+  }
+
+  .user {
+    margin-right: 3rem;
   }
 }
 

@@ -1,4 +1,4 @@
-import { dateToString, viewsToString } from "../../Functions";
+import { dateToString, viewsToString } from "../../utils/Functions";
 import { useNavigate } from "react-router-dom";
 import { FooterButtons } from "./FooterButtons";
 

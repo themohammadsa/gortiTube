@@ -1,8 +1,8 @@
-import { useLibraryContext } from "../Context/LibraryContext";
-import { VideoCard } from "../Components/VideoCard";
-import { NavBar } from "../Components/NavBar";
-import { Footer } from "../Components/Footer";
-import { Loader } from "../Components/Loader/Loader";
+import { useLibraryContext } from "../context/LibraryContext";
+import { VideoCard } from "../components/VideoCard";
+import { NavBar } from "../components/NavBar";
+import { Footer } from "../components/Footer";
+import { Loader } from "../components/loader/Loader";
 
 export const Home = () => {
   const { database, loader } = useLibraryContext();

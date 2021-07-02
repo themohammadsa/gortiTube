@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useLibraryContext } from "../../Context/LibraryContext";
-import { useToggleContext } from "../../Context/ToggleContext";
+import { useLibraryContext } from "../../context/LibraryContext";
+import { useToggleContext } from "../../context/ToggleContext";
 
 export const PlaylistModal = ({ renderedVideo }) => {
   const [nameOfPlaylist, setNameOfPlaylist] = useState("");

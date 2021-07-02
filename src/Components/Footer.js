@@ -1,7 +1,7 @@
-import linkedin from "../Icons/linkedin.png";
-import instagram from "../Icons/instagram.png";
-import twitter from "../Icons/twitter.png";
-import github from "../Icons/github.png";
+import linkedin from "../icons/linkedin.png";
+import instagram from "../icons/instagram.png";
+import twitter from "../icons/twitter.png";
+import github from "../icons/github.png";
 
 export const Footer = () => {
   return (

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useToggleContext } from "../Context/ToggleContext";
+import { useToggleContext } from "../context/ToggleContext";
 
 export const Toast = () => {
   const { toastText, toastShow, setToastShow } = useToggleContext();
