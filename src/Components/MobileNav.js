@@ -1,13 +1,13 @@
-import { useNavigate } from "react-router-dom";
-import { BiHistory } from "react-icons/bi";
-import { MdVideoLibrary } from "react-icons/md";
+import { useNavigate } from 'react-router-dom';
+import { BiHistory } from 'react-icons/bi';
+import { MdVideoLibrary } from 'react-icons/md';
 import {
   AiOutlineClockCircle,
   AiFillClockCircle,
   AiFillHeart,
   AiOutlineHeart,
-  AiFillHome
-} from "react-icons/ai";
+  AiFillHome,
+} from 'react-icons/ai';
 
 export const MobileNav = () => {
   const navigate = useNavigate();
@@ -18,23 +18,23 @@ export const MobileNav = () => {
         <div className="flex-row justify-space-evenly">
           <AiFillHome
             className="react-icon mobile-icon"
-            onClick={() => navigate("/")}
+            onClick={() => navigate('/')}
           />
           <AiFillHeart
             className="react-icon mobile-icon"
-            onClick={() => navigate("/liked-videos")}
+            onClick={() => navigate('/liked-videos')}
           />
           <MdVideoLibrary
             className="react-icon mobile-icon"
-            onClick={() => navigate("/playlist")}
-          />{" "}
+            onClick={() => navigate('/playlist')}
+          />{' '}
           <AiFillClockCircle
             className="react-icon mobile-icon"
-            onClick={() => navigate("/watch-later")}
+            onClick={() => navigate('/watch-later')}
           />
           <BiHistory
             className="react-icon mobile-icon"
-            onClick={() => navigate("/history")}
+            onClick={() => navigate('/history')}
           />
         </div>
       </div>
@@ -47,15 +47,15 @@ export const FooterButtons = ({ renderedVideo }) => {
     <>
       <div
         className="flex-row justify-space-evenly"
-        style={{ marginTop: "1rem" }}
+        style={{ marginTop: '1rem' }}
       >
         {!state.likedVideos.some((video) => video.id === renderedVideo.id) ? (
           <AiOutlineHeart
             className="react-icon"
             onClick={() => {
               dispatch({
-                type: "ADD_TO_LIKED_VIDEOS",
-                payload: renderedVideo
+                type: 'ADD_TO_LIKED_VIDEOS',
+                payload: renderedVideo,
               });
             }}
           />
@@ -64,8 +64,8 @@ export const FooterButtons = ({ renderedVideo }) => {
             className="react-icon"
             onClick={() => {
               dispatch({
-                type: "REMOVE_FROM_LIKED_VIDEOS",
-                payload: renderedVideo
+                type: 'REMOVE_FROM_LIKED_VIDEOS',
+                payload: renderedVideo,
               });
             }}
           />
@@ -76,8 +76,8 @@ export const FooterButtons = ({ renderedVideo }) => {
             className="react-icon"
             onClick={() =>
               dispatch({
-                type: "ADD_TO_WATCH_LATER",
-                payload: renderedVideo
+                type: 'ADD_TO_WATCH_LATER',
+                payload: renderedVideo,
               })
             }
           />
@@ -86,8 +86,8 @@ export const FooterButtons = ({ renderedVideo }) => {
             className="react-icon"
             onClick={() =>
               dispatch({
-                type: "REMOVE_FROM_WATCH_LATER",
-                payload: renderedVideo
+                type: 'REMOVE_FROM_WATCH_LATER',
+                payload: renderedVideo,
               })
             }
           />
@@ -96,8 +96,8 @@ export const FooterButtons = ({ renderedVideo }) => {
           className="react-icon"
           onClick={() =>
             dispatch({
-              type: "ADD_TO_LIKED_VIDEOS",
-              payload: renderedVideo
+              type: 'ADD_TO_LIKED_VIDEOS',
+              payload: renderedVideo,
             })
           }
         />

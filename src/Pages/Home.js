@@ -1,8 +1,8 @@
-import { useLibraryContext } from "../context/LibraryContext";
-import { VideoCard } from "../components/VideoCard";
-import { NavBar } from "../components/NavBar";
-import { Footer } from "../components/Footer";
-import { Loader } from "../components/loader/Loader";
+import { useLibraryContext } from '../context/LibraryContext';
+import { VideoCard } from '../components/VideoCard';
+import { NavBar } from '../components/NavBar';
+import { Footer } from '../components/Footer';
+import { Loader } from '../components/loader/Loader';
 
 export const Home = () => {
   const { database, loader } = useLibraryContext();
@@ -15,7 +15,7 @@ export const Home = () => {
         </div>
         {!loader ? (
           <div className="loader">
-            <Loader />{" "}
+            <Loader />{' '}
           </div>
         ) : (
           <div className="flex-row flex-wrap justify-space-evenly">
@@ -25,10 +25,10 @@ export const Home = () => {
                   <VideoCard video={video} />
                 </div>
               );
-            })}{" "}
+            })}{' '}
           </div>
-        )}{" "}
-      </div>{" "}
+        )}{' '}
+      </div>{' '}
       <Footer />
     </>
   );

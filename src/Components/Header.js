@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaUserAlt, FaSearch } from 'react-icons/fa';
+import { FaSearch } from 'react-icons/fa';
 import logotext from '../icons/logotext.png';
 import logo from '../icons/logo.png';
 import { SearchBar } from './SearchBar';

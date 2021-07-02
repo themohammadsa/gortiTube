@@ -34,7 +34,7 @@ export const Playlist = () => {
                         onClick={() => {
                           dispatch({
                             type: 'DELETE_PLAYLIST',
-                            nameOfPlaylist: playlist.name
+                            nameOfPlaylist: playlist.name,
                           });
                           setReRender(!reRender);
                           setToastShow((toggle) => !toggle);

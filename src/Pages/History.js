@@ -1,9 +1,9 @@
-import { useLibraryContext } from "../context/LibraryContext";
-import { VideoCard } from "../components/VideoCard";
-import { NavBar } from "../components/NavBar";
-import { Footer } from "../components/Footer";
-import { useToggleContext } from "../context/ToggleContext";
-import { Toast } from "../components/Toast";
+import { useLibraryContext } from '../context/LibraryContext';
+import { VideoCard } from '../components/VideoCard';
+import { NavBar } from '../components/NavBar';
+import { Footer } from '../components/Footer';
+import { useToggleContext } from '../context/ToggleContext';
+import { Toast } from '../components/Toast';
 
 export const History = () => {
   const { state, dispatch } = useLibraryContext();
@@ -13,8 +13,8 @@ export const History = () => {
     <>
       <div className="page">
         <div>
-          {" "}
-          <NavBar />{" "}
+          {' '}
+          <NavBar />{' '}
         </div>
         <div className="flex-column test margin-auto">
           <h1 className="heading">History</h1>
@@ -24,32 +24,32 @@ export const History = () => {
               {state.history.map((video, index) => {
                 return (
                   <div key={index}>
-                    <div style={{ position: "relative" }}>
-                      <VideoCard video={video} />{" "}
+                    <div style={{ position: 'relative' }}>
+                      <VideoCard video={video} />{' '}
                       <span
                         className="button-close"
                         onClick={() => {
                           dispatch({
-                            type: "REMOVE_FROM_HISTORY",
-                            payload: video
+                            type: 'REMOVE_FROM_HISTORY',
+                            payload: video,
                           });
                           setToastShow((toggle) => !toggle);
-                          setToastText("Removed from History");
+                          setToastText('Removed from History');
                         }}
                       >
-                        {" "}
-                        ×{" "}
+                        {' '}
+                        ×{' '}
                       </span>
                     </div>
                   </div>
                 );
-              })}{" "}
+              })}{' '}
             </div>
-          )}{" "}
+          )}{' '}
         </div>
-      </div>{" "}
+      </div>{' '}
       <Toast />
-      <Footer />{" "}
+      <Footer />{' '}
     </>
   );
 };
