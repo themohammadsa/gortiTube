@@ -12,6 +12,12 @@ Here's the link for the live demo:
 
 ![demo](/demo.gif)
 
+## Links
+
+- [Live Demo](https://gortitube.netlify.app/)
+- [Front-End Repo](https://github.com/themohammadsa/gortiTube-v2.0)
+- [Back-End Repo](https://github.com/themohammadsa/gortiTube-backend)
+
 ## Features
 
 - Video Player load based on id from backend
