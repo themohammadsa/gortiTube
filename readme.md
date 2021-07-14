@@ -31,7 +31,7 @@ Here's the link for the live demo:
 
 - React 
 - Gorti UI (CSS library)
-- React Router V6
+- React Router
 
 ### Back-End:
 
